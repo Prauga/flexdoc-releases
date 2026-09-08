@@ -3,6 +3,28 @@
   "schemaVersion": 1,
   "releases": [
     {
+      "id": "3-1",
+      "version": "3.1",
+      "title": "Backend-native Contract Validation",
+      "summary": "FlexDoc turns Runtime Intelligence into structured operation-level contract findings produced by the running Node backend, with the renderer and CLI consuming the same result.",
+      "highlights": [
+        "Express, Fastify, Hono and NestJS produce backend-owned operation drift findings instead of relying on document-only validation.",
+        "Findings distinguish undocumented, unobserved, method-mismatched and verified duplicate operation registrations while preserving partial-discovery semantics.",
+        "Runtime Intelligence links documented findings back to OpenAPI operations and keeps route-presence fallback for compatible native snapshots.",
+        "flexdoc validate consumes the backend result in CI with JSON output, custom headers/auth and configurable failure thresholds."
+      ],
+      "changelog": true,
+      "publishedBuild": "3.1.0",
+      "publishedAt": "2026-09-08",
+      "javascript": {
+        "version": "3.1.0",
+        "tag": "js/v3.1.0",
+        "clientPackage": "@prauga/flexdoc-client",
+        "backendPackage": "@prauga/flexdoc-backend",
+        "rendererAsset": "flexdoc-renderer.tar.gz"
+      }
+    },
+    {
       "id": "3-0",
       "version": "3.0",
       "title": "Runtime Intelligence and a better API workspace",
@@ -264,20 +286,20 @@
     }
   ],
   "currentPackages": [
-    { "ecosystem": "npm", "artifact": "@prauga/flexdoc-client", "version": "3.0.0", "href": "https://www.npmjs.com/package/@prauga/flexdoc-client/v/3.0.0" },
-    { "ecosystem": "npm", "artifact": "@prauga/flexdoc-backend", "version": "3.0.0", "href": "https://www.npmjs.com/package/@prauga/flexdoc-backend/v/3.0.0" },
+    { "ecosystem": "npm", "artifact": "@prauga/flexdoc-client", "version": "3.1.0", "href": "https://www.npmjs.com/package/@prauga/flexdoc-client/v/3.1.0" },
+    { "ecosystem": "npm", "artifact": "@prauga/flexdoc-backend", "version": "3.1.0", "href": "https://www.npmjs.com/package/@prauga/flexdoc-backend/v/3.1.0" },
     { "ecosystem": "npm", "artifact": "@prauga/flexdoc-core", "version": "0.5.0", "href": "https://www.npmjs.com/package/@prauga/flexdoc-core/v/0.5.0" },
-    { "ecosystem": "npm", "artifact": "@prauga/flexdoc-cli", "version": "0.5.0", "href": "https://www.npmjs.com/package/@prauga/flexdoc-cli/v/0.5.0" },
-    { "ecosystem": "NuGet", "artifact": "Prauga.FlexDoc.AspNetCore", "version": "0.5.0", "href": "https://www.nuget.org/packages/Prauga.FlexDoc.AspNetCore/0.5.0" },
-    { "ecosystem": "Maven", "artifact": "com.prauga.flexdoc:flexdoc-jvm", "version": "0.8.0", "href": "https://central.sonatype.com/artifact/com.prauga.flexdoc/flexdoc-jvm/0.8.0" },
-    { "ecosystem": "Maven", "artifact": "com.prauga.flexdoc:flexdoc-jaxrs", "version": "0.8.0", "href": "https://central.sonatype.com/artifact/com.prauga.flexdoc/flexdoc-jaxrs/0.8.0" },
-    { "ecosystem": "Maven", "artifact": "com.prauga.flexdoc:flexdoc-spring-boot-starter", "version": "0.8.0", "href": "https://central.sonatype.com/artifact/com.prauga.flexdoc/flexdoc-spring-boot-starter/0.8.0" },
-    { "ecosystem": "PyPI", "artifact": "prauga-flexdoc", "version": "0.7.0", "href": "https://pypi.org/project/prauga-flexdoc/0.7.0/" },
-    { "ecosystem": "Composer", "artifact": "prauga/flexdoc", "version": "0.4.2", "href": "https://packagist.org/packages/prauga/flexdoc#0.4.2" },
-    { "ecosystem": "RubyGems", "artifact": "prauga-flexdoc", "version": "0.4.2", "href": "https://rubygems.org/gems/prauga-flexdoc/versions/0.4.2" },
-    { "ecosystem": "crates.io", "artifact": "prauga-flexdoc-axum", "version": "0.5.2", "href": "https://crates.io/crates/prauga-flexdoc-axum/0.5.2" },
-    { "ecosystem": "crates.io", "artifact": "prauga-flexdoc-actix", "version": "0.4.2", "href": "https://crates.io/crates/prauga-flexdoc-actix/0.4.2" },
-    { "ecosystem": "Hex", "artifact": "prauga_flexdoc", "version": "0.4.2", "href": "https://hex.pm/packages/prauga_flexdoc/0.4.2" },
-    { "ecosystem": "Go", "artifact": "github.com/prauga/flexdoc/adapters/go", "version": "0.5.2", "href": "https://github.com/Prauga/flexdoc/tree/adapters/go/v0.5.2/adapters/go" }
+    { "ecosystem": "npm", "artifact": "@prauga/flexdoc-cli", "version": "0.6.0", "href": "https://www.npmjs.com/package/@prauga/flexdoc-cli/v/0.6.0" },
+    { "ecosystem": "NuGet", "artifact": "Prauga.FlexDoc.AspNetCore", "version": "0.5.1", "href": "https://www.nuget.org/packages/Prauga.FlexDoc.AspNetCore/0.5.1" },
+    { "ecosystem": "Maven", "artifact": "com.prauga.flexdoc:flexdoc-jvm", "version": "0.8.1", "href": "https://central.sonatype.com/artifact/com.prauga.flexdoc/flexdoc-jvm/0.8.1" },
+    { "ecosystem": "Maven", "artifact": "com.prauga.flexdoc:flexdoc-jaxrs", "version": "0.8.1", "href": "https://central.sonatype.com/artifact/com.prauga.flexdoc/flexdoc-jaxrs/0.8.1" },
+    { "ecosystem": "Maven", "artifact": "com.prauga.flexdoc:flexdoc-spring-boot-starter", "version": "0.8.1", "href": "https://central.sonatype.com/artifact/com.prauga.flexdoc/flexdoc-spring-boot-starter/0.8.1" },
+    { "ecosystem": "PyPI", "artifact": "prauga-flexdoc", "version": "0.7.1", "href": "https://pypi.org/project/prauga-flexdoc/0.7.1/" },
+    { "ecosystem": "Composer", "artifact": "prauga/flexdoc", "version": "0.4.3", "href": "https://packagist.org/packages/prauga/flexdoc#0.4.3" },
+    { "ecosystem": "RubyGems", "artifact": "prauga-flexdoc", "version": "0.4.3", "href": "https://rubygems.org/gems/prauga-flexdoc/versions/0.4.3" },
+    { "ecosystem": "crates.io", "artifact": "prauga-flexdoc-axum", "version": "0.5.3", "href": "https://crates.io/crates/prauga-flexdoc-axum/0.5.3" },
+    { "ecosystem": "crates.io", "artifact": "prauga-flexdoc-actix", "version": "0.4.3", "href": "https://crates.io/crates/prauga-flexdoc-actix/0.4.3" },
+    { "ecosystem": "Hex", "artifact": "prauga_flexdoc", "version": "0.4.3", "href": "https://hex.pm/packages/prauga_flexdoc/0.4.3" },
+    { "ecosystem": "Go", "artifact": "github.com/prauga/flexdoc/adapters/go", "version": "0.5.3", "href": "https://github.com/Prauga/flexdoc/tree/adapters/go/v0.5.3/adapters/go" }
   ]
 }
