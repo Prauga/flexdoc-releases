@@ -1,0 +1,283 @@
+{
+  "$schema": "./schema/releases.schema.json",
+  "schemaVersion": 1,
+  "releases": [
+    {
+      "id": "3-0",
+      "version": "3.0",
+      "title": "Runtime Intelligence and a better API workspace",
+      "summary": "FlexDoc can compare OpenAPI with routes registered by supported running frameworks. Try It and the API Client also share the same editor and scripting experience.",
+      "highlights": [
+        "Runtime Intelligence shows matched, runtime-only and documented-only routes on supported backends.",
+        "Try It and the API Client share request editing, handoff state, command navigation and CodeMirror scripts.",
+        "Accessibility, responsive layouts and saved workspace preferences were tightened across the renderer.",
+        "Bundle size, large-spec rendering, caching, startup cost and memory use are measured in CI."
+      ],
+      "changelog": true,
+      "publishedBuild": "3.0.0",
+      "publishedAt": "2026-09-07",
+      "javascript": {
+        "version": "3.0.0",
+        "tag": "js/v3.0.0",
+        "clientPackage": "@prauga/flexdoc-client",
+        "backendPackage": "@prauga/flexdoc-backend",
+        "rendererAsset": "flexdoc-renderer.tar.gz"
+      }
+    },
+    {
+      "id": "2-9-9",
+      "version": "2.9.9",
+      "title": "Performance and production hardening",
+      "summary": "Added caching, ETags and repeatable performance checks for hosted documentation.",
+      "highlights": [
+        "Node hosts cache generated docs pages and combine concurrent cold requests into one render.",
+        "Docs HTML supports deterministic ETag/304 revalidation while versioned renderer assets use long-lived caching.",
+        "CI tracks bundle size, large-spec rendering, startup time and memory use.",
+        "Static export remains available when you want no FlexDoc runtime work in the application."
+      ],
+      "changelog": true,
+      "publishedBuild": "2.9.9",
+      "publishedAt": "2026-09-07",
+      "javascript": {
+        "version": "2.9.9",
+        "tag": "js/v2.9.9",
+        "clientPackage": "@prauga/flexdoc-client",
+        "backendPackage": "@prauga/flexdoc-backend",
+        "rendererAsset": "flexdoc-renderer.tar.gz"
+      }
+    },
+    {
+      "id": "2-9-5",
+      "version": "2.9.5",
+      "title": "More REST body types and API-host execution",
+      "summary": "Added structured request bodies and server-side execution for requests that browser fetch cannot send.",
+      "highlights": [
+        "URL-encoded, multipart, GraphQL and binary bodies work across editing, runs, import, History and replay.",
+        "Digest, Hawk, OAuth 1.0, AWS SigV4, NTLM intent and cookie API keys stay typed when imported or saved.",
+        "The Node backend can opt into cookie jars, configured mTLS certificates, Digest, Hawk, OAuth 1.0 and AWS SigV4.",
+        "Browser and host execution use the same response viewer, scripts, tests, History and collection runner."
+      ],
+      "changelog": true,
+      "publishedBuild": "2.9.5",
+      "publishedAt": "2026-09-06",
+      "javascript": {
+        "version": "2.9.5",
+        "tag": "js/v2.9.5",
+        "clientPackage": "@prauga/flexdoc-client",
+        "backendPackage": "@prauga/flexdoc-backend",
+        "rendererAsset": "flexdoc-renderer.tar.gz"
+      }
+    },
+    {
+      "id": "2-9",
+      "version": "2.9",
+      "title": "Collection runs, scripting help and History",
+      "summary": "Saved requests became repeatable workflows instead of isolated one-off calls.",
+      "highlights": [
+        "Run collections and folders in saved order with progress, Stop and stop-on-failure controls.",
+        "Script IntelliSense adds completions, signatures, docs, variable keys and assertion help.",
+        "History adds search, grouped runs, response details, tests, logs, replay and deletion.",
+        "Send and collection runs use the same request, auth, variable, script and test logic."
+      ],
+      "changelog": true,
+      "publishedBuild": "2.9.0",
+      "publishedAt": "2026-09-06",
+      "javascript": {
+        "version": "2.9.0",
+        "tag": "js/v2.9.0",
+        "clientPackage": "@prauga/flexdoc-client",
+        "backendPackage": "@prauga/flexdoc-backend",
+        "rendererAsset": "flexdoc-renderer.tar.gz"
+      }
+    },
+    {
+      "id": "2-8",
+      "version": "2.8",
+      "title": "Postman import",
+      "summary": "Postman collections and environments can be imported into normal FlexDoc workspace data.",
+      "highlights": [
+        "Import Postman Collection v2.1 requests, folders, variables, common auth, supported bodies and compatible scripts.",
+        "Import Postman environments into FlexDoc environments and keep them after reload.",
+        "Unsupported auth, script or body behavior is reported as a warning instead of being guessed.",
+        "Viewer settings and renderer options were also brought into the coordinated 2.8 release."
+      ],
+      "changelog": true,
+      "publishedBuild": "2.8.0",
+      "publishedAt": "2026-09-05",
+      "javascript": {
+        "version": "2.8.0",
+        "tag": "js/v2.8.0",
+        "clientPackage": "@prauga/flexdoc-client",
+        "backendPackage": "@prauga/flexdoc-backend",
+        "rendererAsset": "flexdoc-renderer.tar.gz"
+      }
+    },
+    {
+      "id": "2-7",
+      "version": "2.7",
+      "title": "Try It handoff and OAuth",
+      "summary": "Try It and the standalone API Client began sharing the same editable request state.",
+      "highlights": [
+        "OpenAPI Try It can hand the live request directly into the API Client.",
+        "Inherited auth stays consistent across the handoff and saved request hierarchy.",
+        "Browser OAuth support expands beyond manually pasted access tokens."
+      ],
+      "changelog": true
+    },
+    {
+      "id": "2-6",
+      "version": "2.6",
+      "title": "Persisted tests and script logs",
+      "summary": "Test results and script output became part of saved request History.",
+      "highlights": [
+        "Post-response test results are saved with History entries.",
+        "Captured script output remains available after reload.",
+        "History keeps the validation context produced by the scripting runtime."
+      ],
+      "changelog": true
+    },
+    {
+      "id": "2-5",
+      "version": "2.5",
+      "title": "Inherited auth and scripting",
+      "summary": "Shared authentication and script state reduced repeated setup across related requests.",
+      "highlights": [
+        "Collection, folder and request auth follow an explicit inheritance chain.",
+        "OpenAPI authorization state carries into the API Client handoff.",
+        "OAuth access tokens and collection-variable scripting become reusable workspace features."
+      ],
+      "changelog": true
+    },
+    {
+      "id": "2-4",
+      "version": "2.4",
+      "title": "Collection variables and nested folders",
+      "summary": "Collections gained the structure needed for larger reusable workspaces.",
+      "highlights": [
+        "Collections can define reusable variables.",
+        "Folders can nest to arbitrary depth.",
+        "History replay keeps the request tied to its original collection."
+      ],
+      "changelog": true
+    },
+    {
+      "id": "2-3",
+      "version": "2.3",
+      "title": "More backend frameworks",
+      "summary": "FlexDoc became available through native packages across the main backend ecosystems.",
+      "highlights": [
+        "JavaScript/TypeScript hosts and native adapters use the same renderer contract.",
+        ".NET, JVM/Spring/JAX-RS, Python, PHP, Ruby, Go, Rust and Elixir gained native packaging or integrations.",
+        "Adapters serve local version-matched renderer assets instead of maintaining separate UI implementations."
+      ],
+      "changelog": true,
+      "publishedBuild": "2.3.0",
+      "publishedAt": "2026-09-05",
+      "javascript": {
+        "version": "2.3.0",
+        "tag": "js/v2.3.0",
+        "clientPackage": "@prauga/flexdoc-client",
+        "backendPackage": "@prauga/flexdoc-backend",
+        "rendererAsset": "flexdoc-renderer.tar.gz"
+      }
+    },
+    {
+      "id": "2-2",
+      "version": "2.2",
+      "title": "CLI, compatibility tests and API Client groundwork",
+      "summary": "The release added better validation, static docs tooling and the first pieces of the standalone API Client.",
+      "highlights": [
+        "An OpenAPI compatibility corpus and browser regression tests define supported behavior.",
+        "The CLI can serve local docs and build self-contained static output.",
+        "Standalone API Client groundwork and Try It handoff started the broader workspace direction.",
+        "Prauga package migration and fingerprinted renderer assets made distribution more predictable."
+      ],
+      "changelog": true,
+      "publishedBuild": "2.2.0",
+      "publishedAt": "2026-09-01",
+      "javascript": {
+        "version": "2.2.0",
+        "tag": "js/v2.2.0",
+        "clientPackage": "@prauga/flexdoc-client",
+        "backendPackage": "@prauga/flexdoc-backend",
+        "rendererAsset": "flexdoc-renderer.tar.gz"
+      }
+    },
+    {
+      "id": "2-0-2",
+      "version": "2.0.2",
+      "title": "Module type resolution fixes",
+      "summary": "Fixed ESM/CommonJS type resolution so both module systems receive the right declarations.",
+      "highlights": [
+        "Correct TypeScript declarations are selected for both ESM and CommonJS consumers."
+      ],
+      "changelog": false,
+      "publishedBuild": "2.0.2",
+      "publishedAt": "2026-08-30",
+      "javascript": {
+        "version": "2.0.2",
+        "tag": "js/v2.0.2",
+        "clientPackage": "@bluejeans/flexdoc-client",
+        "backendPackage": "@bluejeans/flexdoc-backend",
+        "rendererAsset": "flexdoc-renderer.tar.gz"
+      }
+    },
+    {
+      "id": "2-0-1",
+      "version": "2.0.1",
+      "title": "TypeScript package export fix",
+      "summary": "Fixed published client package type exports for TypeScript consumers.",
+      "highlights": [
+        "Published client type declarations resolve correctly for TypeScript projects."
+      ],
+      "changelog": false,
+      "publishedBuild": "2.0.1",
+      "publishedAt": "2026-08-30",
+      "javascript": {
+        "version": "2.0.1",
+        "tag": "js/v2.0.1",
+        "clientPackage": "@bluejeans/flexdoc-client",
+        "backendPackage": "@bluejeans/flexdoc-backend",
+        "rendererAsset": "flexdoc-renderer.tar.gz"
+      }
+    },
+    {
+      "id": "2-0",
+      "version": "2.0",
+      "title": "Shared renderer architecture",
+      "summary": "FlexDoc moved to one renderer and one OpenAPI/request model shared across frontend and backend integrations.",
+      "highlights": [
+        "One browser renderer handles navigation, schemas, Try It, code samples and theming.",
+        "OpenAPI 3.0/3.1 parsing and request serialization moved into shared core logic.",
+        "Backend packages became thin hosts for the shared renderer instead of separate documentation products."
+      ],
+      "changelog": true,
+      "publishedBuild": "2.0.0",
+      "publishedAt": "2026-08-30",
+      "javascript": {
+        "version": "2.0.0",
+        "tag": "js/v2.0.0",
+        "clientPackage": "@bluejeans/flexdoc-client",
+        "backendPackage": "@bluejeans/flexdoc-backend",
+        "rendererAsset": "flexdoc-renderer.tar.gz"
+      }
+    }
+  ],
+  "currentPackages": [
+    { "ecosystem": "npm", "artifact": "@prauga/flexdoc-client", "version": "3.0.0", "href": "https://www.npmjs.com/package/@prauga/flexdoc-client/v/3.0.0" },
+    { "ecosystem": "npm", "artifact": "@prauga/flexdoc-backend", "version": "3.0.0", "href": "https://www.npmjs.com/package/@prauga/flexdoc-backend/v/3.0.0" },
+    { "ecosystem": "npm", "artifact": "@prauga/flexdoc-core", "version": "0.5.0", "href": "https://www.npmjs.com/package/@prauga/flexdoc-core/v/0.5.0" },
+    { "ecosystem": "npm", "artifact": "@prauga/flexdoc-cli", "version": "0.5.0", "href": "https://www.npmjs.com/package/@prauga/flexdoc-cli/v/0.5.0" },
+    { "ecosystem": "NuGet", "artifact": "Prauga.FlexDoc.AspNetCore", "version": "0.5.0", "href": "https://www.nuget.org/packages/Prauga.FlexDoc.AspNetCore/0.5.0" },
+    { "ecosystem": "Maven", "artifact": "com.prauga.flexdoc:flexdoc-jvm", "version": "0.8.0", "href": "https://central.sonatype.com/artifact/com.prauga.flexdoc/flexdoc-jvm/0.8.0" },
+    { "ecosystem": "Maven", "artifact": "com.prauga.flexdoc:flexdoc-jaxrs", "version": "0.8.0", "href": "https://central.sonatype.com/artifact/com.prauga.flexdoc/flexdoc-jaxrs/0.8.0" },
+    { "ecosystem": "Maven", "artifact": "com.prauga.flexdoc:flexdoc-spring-boot-starter", "version": "0.8.0", "href": "https://central.sonatype.com/artifact/com.prauga.flexdoc/flexdoc-spring-boot-starter/0.8.0" },
+    { "ecosystem": "PyPI", "artifact": "prauga-flexdoc", "version": "0.7.0", "href": "https://pypi.org/project/prauga-flexdoc/0.7.0/" },
+    { "ecosystem": "Composer", "artifact": "prauga/flexdoc", "version": "0.4.2", "href": "https://packagist.org/packages/prauga/flexdoc#0.4.2" },
+    { "ecosystem": "RubyGems", "artifact": "prauga-flexdoc", "version": "0.4.2", "href": "https://rubygems.org/gems/prauga-flexdoc/versions/0.4.2" },
+    { "ecosystem": "crates.io", "artifact": "prauga-flexdoc-axum", "version": "0.5.2", "href": "https://crates.io/crates/prauga-flexdoc-axum/0.5.2" },
+    { "ecosystem": "crates.io", "artifact": "prauga-flexdoc-actix", "version": "0.4.2", "href": "https://crates.io/crates/prauga-flexdoc-actix/0.4.2" },
+    { "ecosystem": "Hex", "artifact": "prauga_flexdoc", "version": "0.4.2", "href": "https://hex.pm/packages/prauga_flexdoc/0.4.2" },
+    { "ecosystem": "Go", "artifact": "github.com/prauga/flexdoc/adapters/go", "version": "0.5.2", "href": "https://github.com/Prauga/flexdoc/tree/adapters/go/v0.5.2/adapters/go" }
+  ]
+}

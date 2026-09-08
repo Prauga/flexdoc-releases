@@ -1,0 +1,26 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://raw.githubusercontent.com/Prauga/flexdoc-releases/main/schema/manifest.schema.json",
+  "title": "FlexDoc release manifest",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "current", "releaseFeed", "announcement"],
+  "properties": {
+    "$schema": { "type": "string" },
+    "schemaVersion": { "const": 1 },
+    "current": { "type": "string", "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+(?:-[0-9A-Za-z.-]+)?$" },
+    "releaseFeed": { "type": "string", "pattern": "^[A-Za-z0-9._/-]+\\.json$" },
+    "announcement": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["enabled", "release", "title", "message", "linkLabel"],
+      "properties": {
+        "enabled": { "type": "boolean" },
+        "release": { "type": "string", "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+(?:-[0-9A-Za-z.-]+)?$" },
+        "title": { "type": "string", "minLength": 1, "maxLength": 80 },
+        "message": { "type": "string", "minLength": 1, "maxLength": 180 },
+        "linkLabel": { "type": "string", "minLength": 1, "maxLength": 40 }
+      }
+    }
+  }
+}

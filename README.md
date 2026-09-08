@@ -6,15 +6,18 @@ The FlexDoc website reads this repository at runtime so release notes and announ
 
 ## Files
 
-- `manifest.json` — current release, announcement state, and release index.
-- `releases/*.json` — customer-facing release notes and download/package metadata.
+- `manifest.json` — current release, announcement state, and the release-feed path.
+- `releases.json` — public release history, published JavaScript versions, and the current package matrix.
 - `schema/*.schema.json` — JSON Schema contracts for the feed.
+- `scripts/validate.mjs` — cross-file consistency checks.
 
 ## Updating a release
 
-1. Add or update the release JSON under `releases/`.
-2. Update `manifest.json`.
+1. Add or update the entry in `releases.json`.
+2. Update `manifest.json` when the current release changes.
 3. Enable or disable the optional announcement explicitly in `manifest.json`.
 4. Open a PR. Validation must pass before merging.
+
+The announcement is editorial, not automatic: a new patch can be published without showing a site-wide banner.
 
 Do not add internal PR/commit bookkeeping to public release notes. Keep the copy concise and useful to people using FlexDoc.
