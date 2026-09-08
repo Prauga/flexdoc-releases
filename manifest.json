@@ -1,0 +1,13 @@
+{
+  "$schema": "./schema/manifest.schema.json",
+  "schemaVersion": 1,
+  "current": "3.0.0",
+  "releaseFeed": "releases.json",
+  "announcement": {
+    "enabled": true,
+    "release": "3.0.0",
+    "title": "FlexDoc 3.0 is out",
+    "message": "Runtime Intelligence, a sharper API Client, and measured production performance.",
+    "linkLabel": "See what's new"
+  }
+}

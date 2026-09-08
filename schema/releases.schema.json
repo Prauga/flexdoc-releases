@@ -1,0 +1,72 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://raw.githubusercontent.com/Prauga/flexdoc-releases/main/schema/releases.schema.json",
+  "title": "FlexDoc release feed",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "releases", "currentPackages"],
+  "properties": {
+    "$schema": { "type": "string" },
+    "schemaVersion": { "const": 1 },
+    "releases": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "#/definitions/release" }
+    },
+    "currentPackages": {
+      "type": "array",
+      "items": { "$ref": "#/definitions/package" }
+    }
+  },
+  "definitions": {
+    "javascript": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["version", "tag", "clientPackage", "backendPackage"],
+      "properties": {
+        "version": { "type": "string", "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+(?:-[0-9A-Za-z.-]+)?$" },
+        "tag": { "type": "string", "pattern": "^js/v[0-9]+\\.[0-9]+\\.[0-9]+(?:-[0-9A-Za-z.-]+)?$" },
+        "clientPackage": { "type": "string", "minLength": 1 },
+        "backendPackage": { "type": "string", "minLength": 1 },
+        "rendererAsset": { "type": "string", "minLength": 1 }
+      }
+    },
+    "release": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "version", "title", "summary", "highlights", "changelog"],
+      "properties": {
+        "id": { "type": "string", "pattern": "^[a-z0-9-]+$" },
+        "version": { "type": "string", "pattern": "^[0-9]+\\.[0-9]+(?:\\.[0-9]+)?(?:-[0-9A-Za-z.-]+)?$" },
+        "title": { "type": "string", "minLength": 1, "maxLength": 120 },
+        "summary": { "type": "string", "minLength": 1, "maxLength": 320 },
+        "highlights": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "type": "string", "minLength": 1, "maxLength": 240 }
+        },
+        "changelog": { "type": "boolean" },
+        "publishedBuild": { "type": "string", "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+(?:-[0-9A-Za-z.-]+)?$" },
+        "publishedAt": { "type": "string", "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$" },
+        "javascript": { "$ref": "#/definitions/javascript" }
+      },
+      "allOf": [
+        {
+          "if": { "required": ["publishedBuild"] },
+          "then": { "required": ["publishedAt", "javascript"] }
+        }
+      ]
+    },
+    "package": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["ecosystem", "artifact", "version", "href"],
+      "properties": {
+        "ecosystem": { "type": "string", "minLength": 1 },
+        "artifact": { "type": "string", "minLength": 1 },
+        "version": { "type": "string", "minLength": 1 },
+        "href": { "type": "string", "pattern": "^https://" }
+      }
+    }
+  }
+}
