@@ -3,6 +3,19 @@
   "schemaVersion": 1,
   "releases": [
     {
+      "id": "3-2",
+      "version": "3.2",
+      "title": "Headless API Client Runner",
+      "summary": "FlexDoc takes the API Client outside the browser with portable request, folder and collection artifacts that execute through the same request, auth, variable, scripting and test model.",
+      "highlights": [
+        "Export requests, folder subtrees and collections as versioned FlexDoc Runner artifacts without including History.",
+        "flexdoc run executes those artifacts through the same collection Runner and flex.* scripting runtime used by the browser API Client.",
+        "Ordinary requests use direct Node fetch while capability-gated requests reuse FlexDoc's existing backend host-execution envelope.",
+        "Stable JSON run reports, protected-docs authentication, redirect isolation and deterministic cancellation make headless runs suitable for CI."
+      ],
+      "changelog": true
+    },
+    {
       "id": "3-1",
       "version": "3.1",
       "title": "Backend-native Contract Validation",
